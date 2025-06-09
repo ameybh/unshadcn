@@ -1,13 +1,5 @@
 import { Link } from "@/components/faster-link";
-import { ModeToggle } from "@/components/mode-toggle";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+
 import {
   Card,
   CardContent,
