@@ -1,103 +1,151 @@
-import Image from "next/image";
-
+import { Link } from "@/components/faster-link";
+import { ModeToggle } from "@/components/mode-toggle";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ThemeStyleSelector } from "@/components/theme-style-selector";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 py-20">
+          <Card className="border-none shadow-none">
+            <CardHeader className="text-center space-y-6">
+              <CardTitle className="text-4xl sm:text-6xl font-bold tracking-tight">
+                Break Free from the{" "}
+                <span className="text-primary">Shadcn Look</span>
+              </CardTitle>
+              <CardDescription className="text-xl max-w-2xl mx-auto">
+                Transform your UI with unique styling variants while keeping all
+                the functionality you love from shadcn components.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex gap-4 justify-center">
+              <Button asChild size="lg">
+                <Link href="/components">Explore Components</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="https://github.com/ameybh/unshadcn">
+                  <SiGithub size={24} />
+                  GitHub
+                </Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Features Section */}
+        <section className="container mx-auto px-4 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle>Unique Themes</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Choose from a growing collection of carefully crafted themes
+                  that break away from the standard shadcn look.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Full Functionality</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Maintain all the powerful features and accessibility of shadcn
+                  components while enjoying a fresh look.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Easy Integration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Drop-in replacement for shadcn components. Just install and
+                  start using with your preferred theme.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Theme Style Selector Section */}
+        <section className="container mx-auto px-4 py-20">
+          <ThemeStyleSelector />
+        </section>
+
+        {/* Theme Preview Section */}
+        <section className="container mx-auto px-4 py-20">
+          <Card className="border-none shadow-none">
+            <CardHeader>
+              <CardTitle className="text-3xl text-center">
+                Available Themes
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card className="overflow-hidden">
+                  <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600" />
+                  <CardHeader>
+                    <CardTitle>Forza Horizon</CardTitle>
+                    <CardDescription>
+                      Racing-inspired UI components with dynamic and energetic
+                      styling.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Button variant="link" asChild className="p-0">
+                      <Link href="/themes/forza">View Theme →</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* CTA Section */}
+        <section className="container mx-auto px-4 py-20">
+          <Card>
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl">
+                Ready to Transform Your UI?
+              </CardTitle>
+              <CardDescription className="max-w-2xl mx-auto">
+                Join the community of developers who are breaking free from the
+                standard shadcn look.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex justify-center">
+              <Button asChild size="lg">
+                <Link href="/docs">Get Started</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Footer */}
     </div>
   );
 }

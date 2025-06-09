@@ -1,0 +1,73 @@
+/* Glassmorphism Theme */
+[data-theme-style="glassmorphism"] {
+  --radius: 1rem;
+}
+
+/* Glassmorphism Light Mode */
+[data-theme-style="glassmorphism"]:not(.dark) {
+  --background: oklch(0.93 0.02 240);
+  --foreground: oklch(0.08 0.05 240);
+  --card: oklch(1 0 0 / 0.85);
+  --card-foreground: oklch(0.08 0.05 240);
+  --popover: oklch(1 0 0 / 0.9);
+  --popover-foreground: oklch(0.08 0.05 240);
+  --primary: oklch(0.55 0.15 240);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.88 0.02 240 / 0.8);
+  --secondary-foreground: oklch(0.08 0.05 240);
+  --muted: oklch(0.9 0.02 240 / 0.7);
+  --muted-foreground: oklch(0.4 0.03 240);
+  --accent: oklch(0.82 0.03 240 / 0.8);
+  --accent-foreground: oklch(0.08 0.05 240);
+  --destructive: oklch(0.6 0.2 20);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.75 0.02 240 / 0.4);
+  --input: oklch(0.88 0.02 240 / 0.7);
+  --ring: oklch(0.55 0.15 240 / 0.7);
+}
+
+/* Glassmorphism Dark Mode */
+[data-theme-style="glassmorphism"].dark {
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.92 0.02 240);
+  --card: oklch(0.18 0.02 240 / 0.85);
+  --card-foreground: oklch(0.92 0.02 240);
+  --popover: oklch(0.22 0.02 240 / 0.9);
+  --popover-foreground: oklch(0.92 0.02 240);
+  --primary: oklch(0.75 0.15 240);
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.22 0.02 240 / 0.8);
+  --secondary-foreground: oklch(0.92 0.02 240);
+  --muted: oklch(0.2 0.02 240 / 0.7);
+  --muted-foreground: oklch(0.65 0.02 240);
+  --accent: oklch(0.28 0.02 240 / 0.8);
+  --accent-foreground: oklch(0.92 0.02 240);
+  --destructive: oklch(0.75 0.2 20);
+  --destructive-foreground: oklch(0.08 0.02 240);
+  --border: oklch(0.45 0.02 240 / 0.4);
+  --input: oklch(0.22 0.02 240 / 0.7);
+  --ring: oklch(0.75 0.15 240 / 0.7);
+}
+
+/* Glassmorphism Component Overrides */
+[data-theme-style="glassmorphism"] .bg-card,
+[data-theme-style="glassmorphism"] .bg-popover {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme-style="glassmorphism"] .bg-secondary,
+[data-theme-style="glassmorphism"] .bg-muted,
+[data-theme-style="glassmorphism"] .bg-accent {
+  backdrop-filter: blur(8px);
+}
+
+[data-theme-style="glassmorphism"] button,
+[data-theme-style="glassmorphism"] [role="button"] {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme-style="glassmorphism"] .border {
+  border-color: rgba(255, 255, 255, 0.2);
+}
